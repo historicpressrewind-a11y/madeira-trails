@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MadeiraTrails",
+  "type": "object",
+  "required": ["generated_at", "island_groups", "status_legend", "sources"],
+  "properties": {
+    "generated_at": { "type": "string", "format": "date-time" },
+    "island_groups": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["island", "trails"],
+        "properties": {
+          "island": { "type": "string" },
+          "trails": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["code", "name", "status"],
+              "properties": {
+                "code": { "type": "string" },
+                "name": { "type": "string" },
+                "municipality": { "type": ["string", "null"] },
+                "status": {
+                  "type": "string",
+                  "enum": ["open", "partially_open", "partially_closed", "closed"]
+                },
+                "notes": { "type": "string" }
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "status_legend": { "type": "object" },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["kind", "url", "fetched_at"],
+        "properties": {
+          "kind": { "type": "string" },
+          "url": { "type": "string" },
+          "fetched_at": { "type": "string", "format": "date-time" }
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
