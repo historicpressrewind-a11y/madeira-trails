@@ -1,0 +1,14 @@
+{
+  "generated_at": "2025-08-31T00:00:00Z",
+  "island_groups": [
+    { "island": "Madeira", "trails": [] },
+    { "island": "Porto Santo", "trails": [] }
+  ],
+  "status_legend": {
+    "open": "Fully open",
+    "partially_open": "Open only on a specified section (see notes)",
+    "closed": "Closed",
+    "partially_closed": "Some sections closed; see notes"
+  },
+  "sources": []
+}
